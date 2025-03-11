@@ -8,7 +8,7 @@ const App = () => {
   const [progress, setProgress] = useState(0);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/GetNews-react-news-app">
       <Navbar />
       <LoadingBar
         color="#f11946"
@@ -16,6 +16,7 @@ const App = () => {
         height={3}
         onLoaderFinished={() => setProgress(progress)}
       />
+      <br></br>
       <Routes>
         <Route exact path="/" element={<News setProgress={setProgress} key='general' country='us' category='general' pageSize={8} />} />
         <Route exact path="/business" element={<News setProgress={setProgress} key='business' country='us' category='business' pageSize={8} />} />
